@@ -1,7 +1,9 @@
 # Image Processing Service
 
-project
-url: <a href="https://roadmap.sh/projects/image-processing-service">https://roadmap.sh/projects/image-processing-service</a>
+Build a service that allows users to upload and process images.
+
+Project
+URL: <a href="https://roadmap.sh/projects/image-processing-service">https://roadmap.sh/projects/image-processing-service</a>
 
 ## Tech Stack
 
@@ -13,7 +15,7 @@ url: <a href="https://roadmap.sh/projects/image-processing-service">https://road
 - Image Processing: Thumbnailator / imgscalr / ImageMagick
 - Rate Limit: Bucket4j Core
 
-## Requirement
+## Requirements
 
 Here is the list of features that you should implement in this project:
 
@@ -52,9 +54,9 @@ Here is the list of endpoints that you can implement for this project:
 
 ### Authentication Endpoints
 
-1. Register a new user:
+#### 1. Register a new user:
 
-```
+```text
 POST /register
 {
     "username": "user1",
@@ -64,13 +66,13 @@ POST /register
 
 Response should be the user object with a JWT.
 
-2. Log in an existing user:
+#### 2. Log in an existing user:
 
-```
+```text
 POST /login
 {
-    "username": "user1",
-    "password": "password123"
+  "username": "user1",
+  "password": "password123"
 }
 ```
 
@@ -78,17 +80,17 @@ Response should be the user object with a JWT.
 
 ### Image Management Endpoints
 
-1. Upload an image:
+#### 1. Upload an image:
 
-```
+```text
 POST /images
 Request Body: Multipart form-data with image file
 Response: Uploaded image details (URL, metadata).
 ```
 
-2. Apply transformations to an image:
+#### 2. Apply transformations to an image:
 
-```
+```text
 POST /images/:id/transform
 {
     "transformations": {
@@ -115,16 +117,16 @@ POST /images/:id/transform
 User can apply one or more transformations to the image. Response should be the transformed image details (URL,
 metadata).
 
-3. Retrieve an image:
+#### 3. Retrieve an image:
 
-```
+```text
 GET /images/:id
 ```
 
 Response should be the image actual image detail.
 
-4. Get a paginated list of images:
+#### 4. Get a paginated list of images:
 
-```
+```text
 GET /images?page=1&limit=10
 ```
